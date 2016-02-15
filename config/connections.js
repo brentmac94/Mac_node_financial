@@ -40,15 +40,15 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  node_financial_mysqlr: {
+  node_financial_mysql: {
     adapter: 'sails-mysql',
-    host: 'local',
+    host: 'localhost',
     user: 'node_financial',
     password: 'Huskers12',
     database: 'node_financial'
   },
 
-  /***************************************************************************
+  /******************************************************************** *******
   *                                                                          *
   * MongoDB is the leading NoSQL database.                                   *
   * http://en.wikipedia.org/wiki/MongoDB                                     *

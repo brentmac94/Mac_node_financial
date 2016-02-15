@@ -18,6 +18,10 @@ module.exports = {
       type: 'string'
     },
 
+    state: {
+      type: 'string'
+    },
+
     email : {
       type: 'string',
       email: true
