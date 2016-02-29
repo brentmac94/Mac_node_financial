@@ -24,6 +24,17 @@ module.exports = {
     });
   },
 
+  show: function (req, res, next) {
+    Stock.findOne(req.param('id')).populateAll().exec(function (err, stock) {
+      if (err) return next(err);
+      if (!stock) return next();
+      res.view({
+        stock: stock
+      });
+    });
+
+  },
+
   index: function(req, res, next) {
     Stock.find(function foundStocks (err, stocks) {
       if (err) return next(err);
