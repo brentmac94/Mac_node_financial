@@ -38,10 +38,20 @@ module.exports = {
     Stock.findOne(req.param('id'), function foundStock(err, stock) {
       if (err) return next(err);
       if (!stock) return next();
-
       res.view({
         stock: stock
       });
     });
+  },
+
+  update: function(req, res, next) {
+    Stock.update(req.param('id'), req.params.all(), function stockUpdated(err){
+      if (err) {
+        return res.redirect('/stock/edit/' + req.param('id'));
+      }
+
+      res.redirect('/stock/show/' + req.param('id'));
+    });
   }
+
 };

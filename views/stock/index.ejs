@@ -11,10 +11,11 @@
 
   <% _.each(stocks, function(stock) { %>
   <tr data-id="<%= stock.id %>" data-model="stock" >
-    <td><%= stock.owner%></td>
+    <td><%= stock.owner%></td>\
     <td><%= stock.price %></td>
     <td><%= stock.symbol %></td>
     <td><%= stock.number_of_shares %></td>
+    <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
     <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
   </tr>
   <% }) %>
