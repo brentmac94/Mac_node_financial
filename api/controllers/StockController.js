@@ -63,6 +63,12 @@ module.exports = {
 
       res.redirect('/stock/show/' + req.param('id'));
     });
+  },
+
+  destroy: function(req, res, next) {
+    Stock.destroy(req.param('id')).exec( function() {
+      res.redirect('/stock/');
+    });
   }
 
 };
