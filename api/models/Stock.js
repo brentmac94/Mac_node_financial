@@ -8,17 +8,16 @@
 module.exports = {
 
   attributes: {
-
-    name: {
-      type: 'sting',
-      required: true
-    },
-
     price: {
       type: 'float'
     },
 
     symbol: {
+      type: 'string',
+      required: true
+    },
+
+    name : {
       type: 'string',
       required: true
     },
@@ -30,7 +29,6 @@ module.exports = {
 
     date_purchased: {
       type: 'string',
-      required: true
     },
 
     owner: {
@@ -41,4 +39,3 @@ module.exports = {
   }
 
 };
-
