@@ -12,11 +12,20 @@
   <tr data-id="<%= customer.id %>" data-model="customer" >
     <td><%= customer.id %></td>
     <td><%= customer.name %></td>
-    <td><%= customer.email %></td>
+    <td><%= customer.street_address %></td>
+    <td><%= customer.city%></td>
+    <td><%= customer.state%></td>
+    <td><%= customer.zip%></td>
+    <td><%= customer.email%></td>
+    <td><%= customer.home_phone%></td>
+    <td><%= customer.cell_phone%></td>
+
+
     <td><a href="/customer/show/<%= customer.id %>">Show</a></td>
     <td><a href="/customer/edit/<%= customer.id %>">Edit</a></td>
     <td><a href="/customer/destroy/<%= customer.id %>">Delete</a></td>
   </tr>
   <% }) %>
 </table>
+
 <div> <p> <a href="customer/new"> Create New Customer </a></p> </div>

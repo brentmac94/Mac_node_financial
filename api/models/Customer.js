@@ -12,7 +12,7 @@ module.exports = {
   attributes: {
     name: {
       type: 'string',
-      required: true,
+      required: true
     },
     street_address: {
       type: 'string',
@@ -25,7 +25,18 @@ module.exports = {
     },
     email: {
       type: 'string',
-      email: true
+    },
+
+    zip: {
+      type: 'string'
+    },
+
+    home_phone: {
+      type: 'string'
+    },
+
+    cell_phone: {
+      type: 'string'
     },
 
     stocks: {

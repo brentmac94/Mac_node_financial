@@ -8,6 +8,12 @@
 module.exports = {
 
   attributes: {
+
+    name: {
+      type: 'sting',
+      required: true
+    },
+
     price: {
       type: 'float'
     },
@@ -19,6 +25,11 @@ module.exports = {
 
     number_of_shares: {
       type: 'float',
+      required: true
+    },
+
+    date_purchased: {
+      type: 'string',
       required: true
     },
 
