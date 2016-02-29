@@ -7,7 +7,6 @@
 
 module.exports = {
 
-  /* create: */
   'new': function(req, res) {
     res.view();
   },
@@ -16,19 +15,19 @@ module.exports = {
     Customer.create( req.params.all(), function customerCreated(err, customer) {
       if (err) return next(err);
 
-      //res.json(customer);
       res.redirect('/customer/show/' + customer.id);
     });
   },
 
-  show: function(req, res, next) {
-    Customer.findOne(req.param('id'), function foundCustomer(err, customer) {
+  show: function (req, res, next) {
+    Customer.findOne(req.param('id')).populateAll().exec(function (err, customer) {
       if (err) return next(err);
       if (!customer) return next();
       res.view({
         customer: customer
       });
     });
+
   },
 
   index: function(req, res, next) {
@@ -60,6 +59,14 @@ module.exports = {
 
       res.redirect('/customer/show/' + req.param('id'));
     });
+  },
+
+  destroy: function(req, res, next) {
+    Customer.destroy(req.param('id')).exec( function() {
+      res.redirect('/customer/');
+    });
   }
+
+
 
 };

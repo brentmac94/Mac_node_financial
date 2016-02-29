@@ -20,9 +20,28 @@ module.exports = {
     Stock.create(req.params.all(), function stockCreated(err, stock) {
       if (err) return next(err);
 
-      res.json(stock);
+      res.redirect('/customer/show/' + stock.owner);
+    });
+  },
+
+  index: function(req, res, next) {
+    Stock.find(function foundStocks (err, stocks) {
+      if (err) return next(err);
+
+      res.view({
+        stocks: stocks
+      });
+    });
+  },
+
+  edit: function(req, res, next) {
+    Stock.findOne(req.param('id'), function foundStock(err, stock) {
+      if (err) return next(err);
+      if (!stock) return next();
+
+      res.view({
+        stock: stock
+      });
     });
   }
-
-
 };
