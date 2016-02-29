@@ -18,12 +18,12 @@
     <td><%= investment.description %></td>
     <td><%= investment.aquired_date %></td>
     <td><%= investment.aquired_value %></td>
-    <td><%= investment.recent_value%></td>\
+    <td><%= investment.recent_value%></td>
     <td><%= investment.recent_date%></td>
 
-    <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
-    <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
-    <td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
+    <td><a href="/investment/show/<%= investment.id %>">Show</a></td>
+    <td><a href="/investment/edit/<%= investment.id %>">Edit</a></td>
+    <td><a href="/investment/destroy/<%= investment.id %>">Delete</a></td>
   </tr>
   <% }) %>
 </table>

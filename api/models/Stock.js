@@ -33,7 +33,7 @@ module.exports = {
 
     owner: {
       model: 'customer',
-      required: true
+      via: 'owner'
     }
 
   }

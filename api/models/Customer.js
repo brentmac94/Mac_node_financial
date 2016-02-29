@@ -42,6 +42,11 @@ module.exports = {
     stocks: {
       collection: 'stock',
       via: 'owner'
+    },
+
+    investments: {
+      collection: 'investment',
+      via: 'owner'
     }
 
   }

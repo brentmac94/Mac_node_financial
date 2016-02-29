@@ -9,7 +9,7 @@ module.exports = {
   'new': function(req, res, next) {
     Customer.findOne(req.param('owner'), function foundCustomer (err, customer) {
       if (err) return next(err);
-      if (!customer) return next();
+      if (!cust) return next();
       res.view({
         customer: customer
       });
@@ -18,7 +18,7 @@ module.exports = {
   },
 
   create: function(req, res, next) {
-    Investment.create(req.params.all(), function InvestmentCreated(err, investment) {
+    Investment.create(req.params.all(), function investmentCreated(err, investment) {
       if (err) return next(err);
 
       res.redirect('/customer/show/' + investment.owner);
@@ -73,3 +73,4 @@ module.exports = {
   }
 
 };
+

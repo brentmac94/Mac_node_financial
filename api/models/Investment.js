@@ -38,7 +38,7 @@ module.exports = {
 
 
   owner: {
-      collection: 'investment',
+      model: 'customer',
       via: 'owner'
     }
 
