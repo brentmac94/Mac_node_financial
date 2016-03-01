@@ -1,13 +1,13 @@
 <form action="/customer/update/<%= customer.id %>" method="POST" >
   <h2>Edit a Customer</h2>
 
-  <input value="<%= customer.name %>"type="text" name="name" ><br />
-  <input value="<%= customer.email %>"type="text" name="email"><br/>
-  <input value="<%= customer.street_address %>" type="text" name="street_address" ><br />
-  <input value="<%= customer.city %>" type="text" name="city" />
-  <input value="<%= customer.state %>" type="text" name="state" />
-  <input value="<%= customer.zip%>" type="text" name="zip"/>
-  <input value="<%= customer.home_phone%>" type="text" name="home_phone"/>
-  <input value="<%= customer.cell_phone%>" type="text" name="cell_phone"/>
+  <h5> Name: </h5><input value="<%= customer.name %>"type="text" name="name" ><br />
+  <h5>Email:</h5><input value="<%= customer.email %>"type="text" name="email"><br/>
+  <h5>Street Address:</h5><input value="<%= customer.street_address %>" type="text" name="street_address" ><br />
+  <h5>City:</h5><input value="<%= customer.city %>" type="text" name="city" />
+  <h5>State:</h5><input value="<%= customer.state %>" type="text" name="state" />
+  <h5>Zip:</h5><input value="<%= customer.zip%>" type="text" name="zip"/>
+  <h5>Home Phone:</h5><input value="<%= customer.home_phone%>" type="text" name="home_phone"/>
+  <h5>Cell Phone:</h5><input value="<%= customer.cell_phone%>" type="text" name="cell_phone"/>
   <input type="submit" value="Edit Stock" />
 </form>
