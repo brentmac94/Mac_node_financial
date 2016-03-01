@@ -8,6 +8,9 @@
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 
+/* This makes the padding of the dates centered */
+
+
 .clearfix {
   *zoom: 1;
 }
@@ -227,13 +230,13 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: rgb(0,191,255);
+  background-color: rgb(128,128,128);
   padding-right: 30px;
   padding-left: 30px;
 }
 
 a {
-  color: #0088cc;
+  color: #00FF00;
   text-decoration: none;
 }
 
