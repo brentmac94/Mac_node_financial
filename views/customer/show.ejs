@@ -7,6 +7,52 @@
 <h4>Email: <%=customer.email%></h4>
 <h4>Home Phone: <%=customer.home_phone%></h4>
 <h4>Cell Phone: <%=customer.cell_phone%></h4>
+
+<table>
+  <tr>
+    <th> Customer Name</th>
+    <th>Owner</th>
+    <th>Price</th>
+    <th>Symbol</th>
+    <th>Number of Shares</th>
+    <th>Date Purchased</th>
+  </tr>
+<% _.each(customer.stocks, function(stock) { %>
+<tr data-id="<%= stock.id %>" data-model="stock" >
+<td>Symbol: <%= stock.symbol %></td>
+<td> Name: <%= stock.name %></td>
+<td>Number of Shares: <%= stock.number_of_shares %></td>
+<td>Price: $<%= stock.price %></td>
+<td>Date Purchased: <%= stock.date_purchased%></td>
+  </tr>
+  <% }); %>
+  </table>
+
+<table>
+  <tr>
+    <th>Investment Owner</th>
+    <th> Investment Category</th>
+    <th>Investment Description</th>
+    <th>Aquired Value</th>
+    <th>Aquired Date</th>
+    <th>Recent Value/th>
+    <th>Recent Date</th>
+    <th></th>
+  </tr>
+
+  <% _.each(customer.investments, function(investment) { %>
+  <tr data-id="<%= investment.id %>" data-model="investment" >
+    <td><%= investment.owner%></td>
+    <td><%=investment.category%></td>
+    <td><%= investment.description %></td>
+    <td><%= investment.aquired_date %></td>
+    <td><%= investment.aquired_value %></td>
+    <td><%= investment.recent_value%></td>
+    <td><%= investment.recent_date%></td>
+    </tr>
+  <% }); %>
+  </table>
+
 <form action="/stock/new" method="POST">
   <input type="hidden" value="<%= customer.id %>" name="owner" />
   <input type="hidden" value="<%= customer.name %>" name="name" />
@@ -17,5 +63,13 @@
   <input type="hidden" value="<%= customer.id %>" name="owner" />
   <input type="hidden" value="<%= customer.name %>" name="name" />
   <input type="submit" value="Add Investment" />
+
+</form> <form action="/customer/new" method="POST">
+  <input type="hidden" value="<%= customer.id %>" name="owner" />
+  <input type="hidden" value="<%= customer.name %>" name="name" />
+  <input type="submit" value="Add Customer" />
 </form>
+
+
+
 

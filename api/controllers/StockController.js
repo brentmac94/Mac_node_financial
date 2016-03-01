@@ -7,7 +7,7 @@
 
 module.exports = {
   'new': function(req, res, next) {
-    Customer.findAll(req.param('owner'), function foundCustomer (err, customer) {
+    Customer.findOne(req.param('owner'), function foundCustomer (err, customer) {
       if (err) return next(err);
       if (!customer) return next();
       res.view({

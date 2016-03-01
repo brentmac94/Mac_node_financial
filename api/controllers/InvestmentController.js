@@ -9,7 +9,7 @@ module.exports = {
   'new': function(req, res, next) {
     Customer.findOne(req.param('owner'), function foundCustomer (err, customer) {
       if (err) return next(err);
-      if (!cust) return next();
+      if (!customer) return next();
       res.view({
         customer: customer
       });
