@@ -1,4 +1,5 @@
 <form action="/investment/create" method="POST" >
+  <div style="float: right"><img src="http://www.clipartbest.com/cliparts/ace/o7B/aceo7BKdi.gif" width="85" height="100" alt="Dollar Sign"/></div>
   <h2>Create a new Investment for <%= customer.name %></h2>
 
   <input type="hidden" name="owner" value="<%- customer.id %>" />
@@ -8,5 +9,6 @@
   <input type="text" placeholder="Aquired Date" name="aquired_date" >
   <input type="text" placeholder="Recent Value" name="recent_value" >
   <input type="text" placeholder="Recent Date" name="recent_date" >
+  </br>
   <input type="submit" value="Create Investment" />
 </form>

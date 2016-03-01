@@ -10,8 +10,11 @@
 <h4>Home Phone: <%=customer.home_phone%></h4>
 <h4>Cell Phone: <%=customer.cell_phone%></h4>
 
-
-  <br>
+<form action="/customer/edit/<%= customer.id %>" method="POST">
+  <input type="hidden" value="<%= customer.id %>" name="owner" />
+  <input type="hidden" value="<%= customer.name %>" name="name" />
+  <input type="submit" value="Edit Customer" />
+</form>
 
   <h3>Stocks</h3>
 <div style="text-align:center;">
@@ -30,10 +33,18 @@
 <td><%= stock.number_of_shares %></td>
 <td>$<%= stock.price %></td>
 <td> <%= stock.date_purchased%></td>
+  <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
+  <td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
   </tr>
   <% }); %>
   </table>
   </div>
+</br>
+<form action="/stock/new" method="POST">
+  <input type="hidden" value="<%= customer.id %>" name="owner" />
+  <input type="hidden" value="<%= customer.name %>" name="name" />
+  <input type="submit" value="Add Stock" />
+</form>
 
 <h3>Investments</h3>
 
@@ -45,13 +56,12 @@
     <th>Investment Description</th>
     <th>Aquired Value</th>
     <th>Aquired Date</th>
-    <th>Recent Value/th>
+    <th>Recent Value</th>
     <th>Recent Date</th>
-    <th></th>
   </tr>
 
   <% _.each(customer.investments, function(investment) { %>
-  <tr data-id="<%= investment.id %>" data-model="investment" >
+  <tr data-id="<%= investment.id %>" data-model="investment" > </tr>
     <td><%= investment.id%></td>
     <td><%=investment.category%></td>
     <td><%= investment.description %></td>
@@ -59,13 +69,20 @@
     <td><%= investment.aquired_value %></td>
     <td><%= investment.recent_value%></td>
     <td><%= investment.recent_date%></td>
-    </tr>
+    <td><a href="/investment/edit/<%= investment.id %>">Edit</a></td>
+    <td><a href="/investment/destroy/<%= investment.id %>">Delete</a></td>
   <% }); %>
   </table>
-
+  </br>
 </div>
+<form action="/investment/new" method="POST">
+  <input type="hidden" value="<%= customer.id %>" name="owner" />
+  <input type="hidden" value="<%= customer.name %>" name="name" />
+  <input type="submit" value="Add Investment" />
+  </br>
 
-</br>
+
+
 </br>
 
 <div style="text-align:center;">
@@ -78,18 +95,15 @@
 </form>
     </th>
     <th>
-<form action="/investment/new" method="POST">
-  <input type="hidden" value="<%= customer.id %>" name="owner" />
-  <input type="hidden" value="<%= customer.name %>" name="name" />
-  <input type="submit" value="Add Investment" />
-  </th><th>
 </form> <form action="/customer/new" method="POST">
   <input type="hidden" value="<%= customer.id %>" name="owner" />
   <input type="hidden" value="<%= customer.name %>" name="name" />
   <input type="submit" value="Add Customer" />
-</form</th>
+</form></th>
   </table>
 </div>
+
+
 
 
 
