@@ -16,4 +16,4 @@ module.exports.bootstrap = function(cb) {
   cb();
 };
 
-sails.config.appName = "My App Name";
+sails.config.appName = "BMac-Sails Financial";
