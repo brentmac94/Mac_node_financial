@@ -3,6 +3,7 @@
   <a href="/../">Sails Homepage</a> </div>
 
 <h3><u>All Customers</u></h3>
+<h5>Click "Profile" next to the user to add stocks or investments</h5>
 <table border="2" rules="all">
   <tr>
     <th>ID</th>
@@ -28,7 +29,7 @@
     <td><%= customer.cell_phone%></td>
 
 
-    <td><a href="/customer/show/<%= customer.id %>">Show</a></td>
+    <td><a href="/customer/show/<%= customer.id %>">Profile</a></td>
     <td><a href="/customer/edit/<%= customer.id %>">Edit</a></td>
     <td><a href="/customer/destroy/<%= customer.id %>">Delete</a></td>
   </tr>
