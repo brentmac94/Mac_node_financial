@@ -1,10 +1,17 @@
+
+<div style="float: right"><img src="http://www.clipartbest.com/cliparts/ace/o7B/aceo7BKdi.gif" width="85" height="100" alt="Dollar Sign"/></div>
+<div style="text-align: center">
+  <a href="/../">Sails Homepage</a>
+</div>
+
 <form action="/stock/update/<%= stock.id %>" method="POST" >
   <h2>Edit a Stock</h2>
 
   <input value="<%= stock.symbol %>"type="text" name="symbol" ><br />
   <input value="<%= stock.name %>" type="text" name="name" ><br />
   <input value="<%= stock.number_of_shares %>"type="text" name="number_of_shares"><br/>
-  <input value="<%= stock.price %>" type="text" name="price" />
+  <input value="<%= stock.price %>" type="text" name="price" /> </br>
   <input value="<%= stock.date_purchased %>" type="text" name="date_purchased" />
+  </br>
   <input type="submit" value="Edit Stock" />
 </form>

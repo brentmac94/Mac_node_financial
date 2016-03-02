@@ -1,6 +1,10 @@
+<div style="float: right"><img src="http://www.clipartbest.com/cliparts/ace/o7B/aceo7BKdi.gif" width="85" height="100" alt="Dollar Sign"/></div>
+<div style="text-align: center">
+  <a href="/../">Sails Homepage</a> </div>
+
+
 <form action="/investment/create" method="POST" >
-  <div style="float: right"><img src="http://www.clipartbest.com/cliparts/ace/o7B/aceo7BKdi.gif" width="85" height="100" alt="Dollar Sign"/></div>
-  <h2>Create a new Investment for <%= customer.name %></h2>
+  <h2><u>Create a new Investment for <%= customer.name %></u></h2>
 
   <input type="hidden" name="owner" value="<%- customer.id %>" />
   <input type="text" placeholder="Category" name="category" ><br />

@@ -1,5 +1,7 @@
-
 <div style="float: right"><img src="http://www.clipartbest.com/cliparts/ace/o7B/aceo7BKdi.gif" width="85" height="100" alt="Dollar Sign"/></div>
+<div style="text-align: center">
+  <a href="/../">Sails Homepage</a> </div>
+
 <h1><%= customer.name %></h1>
 <hr>
 <h3><u>Address:</u></br> </h3>
@@ -33,6 +35,7 @@
 <td><%= stock.number_of_shares %></td>
 <td>$<%= stock.price %></td>
 <td> <%= stock.date_purchased%></td>
+  <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
   <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
   <td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
   </tr>
@@ -69,6 +72,7 @@
     <td><%= investment.aquired_value %></td>
     <td><%= investment.recent_value%></td>
     <td><%= investment.recent_date%></td>
+    <td><a href="/investment/show/<%= investment.id %>">Show</a></td>
     <td><a href="/investment/edit/<%= investment.id %>">Edit</a></td>
     <td><a href="/investment/destroy/<%= investment.id %>">Delete</a></td>
   <% }); %>
@@ -85,23 +89,9 @@
 
 </br>
 
-<div style="text-align:center;">
-<table>
-    <th>
-<form action="/stock/new" method="POST">
-  <input type="hidden" value="<%= customer.id %>" name="owner" />
-  <input type="hidden" value="<%= customer.name %>" name="name" />
-  <input type="submit" value="Add Stock" />
-</form>
-    </th>
-    <th>
-</form> <form action="/customer/new" method="POST">
-  <input type="hidden" value="<%= customer.id %>" name="owner" />
-  <input type="hidden" value="<%= customer.name %>" name="name" />
-  <input type="submit" value="Add Customer" />
-</form></th>
-  </table>
-</div>
+
+  <a href="/customer/index">Back to All Customers</a>
+
 
 
 
