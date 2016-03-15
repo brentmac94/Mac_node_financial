@@ -24,6 +24,9 @@ module.exports = {
       if (err) return next(err);
       if (!customer) return next();
 
+      customer.stock_profit = 0;
+      customer.current_price = 0;
+
       var http = require('http');
 
       function process_response(webservice_response, stock, callback) {
@@ -39,7 +42,12 @@ module.exports = {
         webservice_response.on('end', function() {
           stock_data = JSON.parse(webservice_data);
           stock.current_price = stock_data.LastPrice;
-          //console.log(stock.symbol + ' = $' + stock.current_price);
+          stock.gain = (stock.current_price - stock.purchase_price) * stock.number_of_shares;
+          customer.portfolioVal += stock.current_price * stock.number_of_shares;
+          customer.stock_profit += stock.gain;
+          parseFloat(customer.stock_profit).toFixed(2);
+          parseFloat(stock.gain.toFixed(2);
+          // console.log(stock.symbol + ' = $' + stock.current_price);
           callback();
         });
       };
@@ -115,6 +123,7 @@ module.exports = {
       res.redirect('/customer/');
     });
   }
+
 
 
 

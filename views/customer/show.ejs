@@ -27,7 +27,9 @@
     <th> Symbol</th>
     <th>Stock Name</th>
     <th>Number of Shares</th>
-    <th>Price</th>
+    <td>Purchase Price</td>
+    <th>Current Price</th>
+    <th> Change </th>
     <th>Date Purchased</th>
   </tr>
 <% _.each(customer.stocks, function(stock) { %>
@@ -35,7 +37,9 @@
 <td> <%= stock.symbol %></td>
 <td> <%= stock.name %></td>
 <td><%= stock.number_of_shares %></td>
+  <td><%= stock.purchase_price %></td>
 <td>$<%= stock.current_price %></td>
+  <td> <%=  stock.gain %> </td>
 <td> <%= stock.date_purchased%></td>
   <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
   <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>

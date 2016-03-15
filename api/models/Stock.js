@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-    price: {
+    purchase_price: {
       type: 'float'
     },
 
