@@ -12,6 +12,10 @@ module.exports = {
       type: 'float'
     },
 
+    current_price: {
+      type: 'float'
+    },
+
     symbol: {
       type: 'string',
       required: true

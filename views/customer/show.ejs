@@ -31,6 +31,7 @@
     <th>Current Price</th>
     <th> Change </th>
     <th>Date Purchased</th>
+    <th> Profit</th>
   </tr>
 <% _.each(customer.stocks, function(stock) { %>
 <tr data-id="<%= stock.id %>" data-model="stock" >
@@ -39,14 +40,21 @@
 <td><%= stock.number_of_shares %></td>
   <td><%= stock.purchase_price %></td>
 <td>$<%= stock.current_price %></td>
-  <td> <%=  stock.gain %> </td>
+  <td> <%= stock.gain %> </td>
 <td> <%= stock.date_purchased%></td>
+  <td> <%=  customer.stock_profit%></td>
   <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
   <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
   <td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
   </tr>
   <% }); %>
   </table>
+
+
+<h4>  Total Stock Profit : $<%=  customer.stock_profit%></h4>
+
+
+
   </div>
 </br>
 <form action="/stock/new" method="POST">

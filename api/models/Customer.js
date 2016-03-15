@@ -47,7 +47,11 @@ module.exports = {
     investments: {
       collection: 'investment',
       via: 'owner'
-    }
+    },
+
+portfolioVal: {
+  type: 'string'
+},
 
   }
 };

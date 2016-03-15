@@ -25,14 +25,17 @@ module.exports = {
     });
   },
 
-  show: function (req, res, next) {
-    Stock.findOne(req.param('id')).populateAll().exec(function (err, stock) {
-      if (err) return next(err);
-      if (!stock) return next();
-      res.view({
-        stock: stock
-      });
-    });
+    show: function (req, res, next) {
+      Stock.findOne(req.param('id')).populateAll().exec(function (err, stock) {
+        if (err) return next(err);
+        if (!stock) return next();
+
+
+
+          res.view({
+            stock: stock
+          });
+        });
 
   },
 
@@ -50,6 +53,8 @@ module.exports = {
     Stock.findOne(req.param('id'), function foundStock(err, stock) {
       if (err) return next(err);
       if (!stock) return next();
+      //
+
       res.view({
         stock: stock
       });
@@ -64,6 +69,8 @@ module.exports = {
 
       res.redirect('/stock/show/' + req.param('id'));
     });
+
+
   },
 
   destroy: function(req, res, next) {

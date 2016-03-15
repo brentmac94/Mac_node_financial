@@ -8,9 +8,10 @@
   <tr>
     <th>Owner ID</th>
     <th> Customer Name</th>
-    <th>Price</th>
     <th>Symbol</th>
     <th>Number of Shares</th>
+    <th>Purchase Price</th>
+    <th>Current Price</th>
     <th>Date Purchased</th>
 
   </tr>
@@ -22,6 +23,7 @@
     <td><%= stock.symbol %></td>
     <td><%= stock.number_of_shares %></td>
     <td><%= stock.purchase_price %></td>
+    <td><%= stock.current_price %></td>
     <td><%= stock.date_purchased%></td>
     <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
     <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>

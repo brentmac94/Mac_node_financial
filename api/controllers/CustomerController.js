@@ -45,8 +45,6 @@ module.exports = {
           stock.gain = (stock.current_price - stock.purchase_price) * stock.number_of_shares;
           customer.portfolioVal += stock.current_price * stock.number_of_shares;
           customer.stock_profit += stock.gain;
-          parseFloat(customer.stock_profit).toFixed(2);
-          parseFloat(stock.gain.toFixed(2);
           // console.log(stock.symbol + ' = $' + stock.current_price);
           callback();
         });
