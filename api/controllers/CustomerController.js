@@ -47,6 +47,8 @@ module.exports = {
           stock.gain = (stock.current_price - stock.price) * stock.number_of_shares;
           customer.portfolioVal += stock.current_price * stock.number_of_shares;
           customer.stock_profit += stock.gain;
+          var n = stock.gain.toFixed(2);
+
           // console.log(stock.symbol + ' = $' + stock.current_price);
           callback();
         });
@@ -67,6 +69,7 @@ module.exports = {
           process_response(response, stock, callback)
         });
         webservice_request.end();
+
 
 
       };
