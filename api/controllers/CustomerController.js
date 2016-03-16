@@ -44,7 +44,7 @@ module.exports = {
         webservice_response.on('end', function() {
           stock_data = JSON.parse(webservice_data);
           stock.current_price = stock_data.LastPrice;
-          stock.gain = (stock.current_price - stock.purchase_price) * stock.number_of_shares;
+          stock.gain = (stock.current_price - stock.price) * stock.number_of_shares;
           customer.portfolioVal += stock.current_price * stock.number_of_shares;
           customer.stock_profit += stock.gain;
           // console.log(stock.symbol + ' = $' + stock.current_price);
