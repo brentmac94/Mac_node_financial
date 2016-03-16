@@ -15,7 +15,7 @@ module.exports = {
       required: true
     },
     street_address: {
-      type: 'string',
+      type: 'string'
     },
     city: {
       type: 'string'
@@ -24,7 +24,7 @@ module.exports = {
       type: 'string'
     },
     email: {
-      type: 'string',
+      type: 'string'
     },
 
     zip: {
@@ -47,11 +47,7 @@ module.exports = {
     investments: {
       collection: 'investment',
       via: 'owner'
-    },
-
-portfolioVal: {
-  type: 'string'
-},
+    }
 
   }
 };

@@ -8,11 +8,8 @@
 module.exports = {
 
   attributes: {
-    purchase_price: {
-      type: 'float'
-    },
 
-    current_price: {
+    price: {
       type: 'float'
     },
 
@@ -32,12 +29,9 @@ module.exports = {
     },
 
     date_purchased: {
-      type: 'string',
+      type: 'string'
     },
 
-    sp: {
-      type: 'float',
-    },
 
     owner: {
       model: 'customer',
