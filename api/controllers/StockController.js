@@ -30,10 +30,9 @@ module.exports = {
         if (err) return next(err);
         if (!stock) return next();
 
-
-
           res.view({
             stock: stock
+
           });
         });
 
@@ -57,6 +56,8 @@ module.exports = {
 
       res.view({
         stock: stock
+
+
       });
     });
   },
