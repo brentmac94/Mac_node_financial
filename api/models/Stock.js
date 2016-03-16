@@ -35,6 +35,10 @@ module.exports = {
       type: 'string',
     },
 
+    sp: {
+      type: 'float',
+    },
+
     owner: {
       model: 'customer',
       via: 'owner'
