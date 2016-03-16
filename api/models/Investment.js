@@ -18,6 +18,10 @@ module.exports = {
       type: 'string',
     },
 
+    gain: {
+      type: 'string'
+    },
+
     aquired_value: {
       type: 'string',
       required: true

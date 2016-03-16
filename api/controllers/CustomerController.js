@@ -27,6 +27,8 @@ module.exports = {
       customer.stock_profit = 0;
       customer.current_price = 0;
 
+
+
       var http = require('http');
 
       function process_response(webservice_response, stock, callback) {

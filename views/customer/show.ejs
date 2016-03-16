@@ -2,7 +2,7 @@
 
 <div style="float: right"><img src="http://www.clipartbest.com/cliparts/ace/o7B/aceo7BKdi.gif" width="85" height="100" alt="Dollar Sign"/></div>
 <div style="text-align: center">
-  <a href="/../">Sails Homepage</a> </div>
+  <h3> <a href="/../">Sails Homepage</a> </div> </h3>
 
 <h1><%= customer.name %></h1>
 <hr>
@@ -31,7 +31,6 @@
     <th>Current Price</th>
     <th> Change </th>
     <th>Date Purchased</th>
-    <th> Profit</th>
   </tr>
 <% _.each(customer.stocks, function(stock) { %>
 <tr data-id="<%= stock.id %>" data-model="stock" >
@@ -42,7 +41,6 @@
 <td>$<%= stock.current_price %></td>
   <td> <%= stock.gain %> </td>
 <td> <%= stock.date_purchased%></td>
-  <td> <%=  customer.stock_profit%></td>
   <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
   <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
   <td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
@@ -51,7 +49,7 @@
   </table>
 
 
-<h4>  Total Stock Profit : $<%=  customer.stock_profit%></h4>
+<h4>  Total Profit between all stocks: $<%=  customer.stock_profit%></h4>
 
 
 
@@ -71,10 +69,10 @@
     <th> Investment ID</th>
     <th> Investment Category</th>
     <th>Investment Description</th>
-    <th>Aquired Value</th>
     <th>Aquired Date</th>
-    <th>Recent Value</th>
+    <th>Aquired Value</th>
     <th>Recent Date</th>
+    <th>Recent Value</th>
   </tr>
 
   <% _.each(customer.investments, function(investment) { %>
@@ -84,8 +82,8 @@
     <td><%= investment.description %></td>
     <td><%= investment.aquired_date %></td>
     <td><%= investment.aquired_value %></td>
-    <td><%= investment.recent_value%></td>
     <td><%= investment.recent_date%></td>
+    <td><%= investment.recent_value%></td>
     <td><a href="/investment/show/<%= investment.id %>">Show</a></td>
     <td><a href="/investment/edit/<%= investment.id %>">Edit</a></td>
     <td><a href="/investment/destroy/<%= investment.id %>">Delete</a></td>
