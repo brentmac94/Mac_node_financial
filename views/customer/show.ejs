@@ -75,7 +75,7 @@
   </tr>
 
   <% _.each(customer.investments, function(investment) { %>
-  <tr data-id="<%= investment.id %>" data-model="investment" </tr>
+  <tr data-id="<%= investment.id %>" data-model="investment"> </tr>
     <td><%= investment.id%></td>
     <td><%=investment.category%></td>
     <td><%= investment.description %></td>
